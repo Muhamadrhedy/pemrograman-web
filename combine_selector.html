@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan CSS combinator - Internal CSS</title>
+</head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+            color: #333333;
+        }
+        .box {
+            border: 1px solid #cccccc;
+            background-color: #ffffff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+        /* Memilih SEMUA elemen <p> di dalam .box-descendant (anak, cucu, cicit, dst.) */
+        .box-descendant p { 
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .box-child > p {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .box-adjacent h4 + p {
+            background-color: #f1c40f;
+            padding: 6px;
+            border-radius: 4px;
+        }
+        .box-general h4 ~ p {
+            border-left: 4px solid #2980b9;
+            padding-left: 10px;
+        }
+    </style>
+<body>
+    <div class="box box-descendant">
+        <h3>1. Descendant Selector (div p)</h3>
+        <p>Paragraf ini anak langsung (berwarna merah).</p>
+        <article>
+            <p>Paragraf ini cucu/di dalam tag article (JUGA berwarna merah).</p>
+        </article>
+    </div>
+    <div class="box box-child">
+        <h3>2. Child Selector (div &gt; p)</h3>
+        <p>Paragraf ini anak langsung (berwarna hijau).</p>
+        <article>
+            <p>Paragraf ini cucu/di dalam tag article (TIDAK berwarna hijau).</p>
+        </article>  
+    </div>
+    <div class="box box-adjacent">
+        <h3>Adjacent Sibling Selector (h4 + p)</h3>
+        <h4>Judul Acuan</h4>
+        <p>Paragraf adik pertama tepat di bawah h4 (terkena latar kuning).</p>
+        <p>Paragraf adik kedua (TIDAK terkena latar kuning).</p>
+    </div>
+    <div class="box box-general">
+        <h3>General Sibling Selector (h4 ~ p)</h3>
+        <h4>Judul Acuan</h4>
+        <p>Paragraf adik pertama (terkena garis tepi biru).</p>
+        <article>
+            <p>Elemen artikel </p>
+        </article>
+        <p>Paragraf adik kedua setelah h4 (JUGA terkena garis tepi biru).</p>
+    </div>
+
+</body>
+</html>
