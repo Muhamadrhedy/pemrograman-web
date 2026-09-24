@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Biodata Mahasiswa</title>
+  <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>Form Biodata Mahasiswa</h2>
+    <form id="formBiodata">
+      
+      <!-- Input Nama -->
+      <div class="form-group">
+        <label for="nama">Nama Lengkap:</label>
+        <input type="text" id="nama" placeholder="Masukkan nama...">
+        <span class="error-msg" id="errNama"></span>
+      </div>
+
+      <!-- Input NIM -->
+      <div class="form-group">
+        <label for="nim">NIM:</label>
+        <input type="text" id="nim" placeholder="Masukkan NIM...">
+        <span class="error-msg" id="errNim"></span>
+      </div>
+
+      <!-- Input Program Studi -->
+      <div class="form-group">
+        <label for="prodi">Program Studi:</label>
+        <select id="prodi">
+          <option value="">-- Pilih Program Studi --</option>
+          <option value="Informatika">Informatika</option>
+          <option value="Sistem Informasi">Sistem Informasi</option>
+          <option value="Teknik Komputer">Teknik Komputer</option>
+        </select>
+        <span class="error-msg" id="errProdi"></span>
+      </div>
+
+      <!-- Input Jenis Kelamin -->
+      <div class="form-group">
+        <label>Jenis Kelamin:</label>
+        <div class="radio-group" id="genderContainer">
+          <label><input type="radio" name="gender" value="Laki-laki"> Laki-laki</label>
+          <label><input type="radio" name="gender" value="Perempuan"> Perempuan</label>
+        </div>
+        <span class="error-msg" id="errGender"></span>
+      </div>
+
+      <button type="submit">Simpan</button>
+    </form>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

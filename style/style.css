@@ -1,40 +1,82 @@
 body {
-    background-color: #f4f4f9;
-    color: #333333;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
 }
 
-header {
-    background-color: #2c3e50;
-    color: #ffffff;
-    text-align: center;
-    padding: 20px;
+.container {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
 }
 
-.kontainer {
-    width: 80%;
-    margin: 20px auto;
-    background-color: #ffffff;
-    padding: 25px;
-    border: 1px solid #dddddd;
-    border-radius: 8px;
+h2 {
+  margin-top: 0;
+  color: #333;
+  text-align: center;
 }
 
-.judul-artikel {
-    color: #2980b9;
-    border-bottom: 2px solid #2980b9;
-    padding-bottom: 8px;
-    margin-top: 0;
+.form-group {
+  margin-bottom: 15px;
 }
 
-#tombol-aksi {
-    display: inline-block;
-    background-color: #27ae60;
-    color: #ffffff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 15px;
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+input[type="text"], select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.radio-group {
+  display: flex;
+  gap: 15px;
+  padding: 5px 0;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+/* Style saat error validasi */
+.is-invalid {
+  border: 1px solid red !important;
+}
+
+.radio-group.is-invalid {
+  border: 1px solid red !important;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.error-msg {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
 }

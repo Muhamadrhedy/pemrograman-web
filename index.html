@@ -1,0 +1,68 @@
+<!-- inline js -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline JS</title>
+ </head>                        
+ <body>
+    <!-- Elemen Input dan Button
+    <label for="inputNilai">Masukkan Nilai:</label>
+    <input type="number" id="inputNilai" placeholder="Contoh: 80">
+    <button onclick="cekKelulusan()">Cek Hasil</button> -->
+
+    <h1 id="header">Header awal</h1>
+    <button onclick="ubahHeader()">Ubah Header</button>
+
+    <input type="text" id="inputNama" placeholder="Ketik nama Anda..." onkeyup="tampilkanNama()">
+    <p>Halo, <span id="outputNama">...</span></p>
+
+    <!-- Kode JavaScript -->
+    <script>
+        // function cekKelulusan() {
+        //     // Membaca nilai dari input
+        //     let nilai = document.getElementById("inputNilai").value;
+
+        //     // Validasi jika input kosong
+        //     if (nilai === "") {
+        //     alert("Harap masukkan nilai terlebih dahulu!");
+        //     return;
+        //     }
+
+        //     // Mengubah nilai teks menjadi tipe angka
+        //     nilai = Number(nilai);
+
+        //     // Mengecek kondisi kelulusan dan menampilkan alert
+        //     if (nilai >= 75) {
+        //     alert("Status: LULUS (Nilai Anda: " + nilai + ")");
+        //     } else {
+        //     alert("Status: TIDAK LULUS (Nilai Anda: " + nilai + ")");
+        //     }
+        // }
+
+        // function luas(panjang, lebar){
+        //     return panjang * lebar;
+        // }
+
+        // let hasil = luas(2, 6);
+        // console.log("Luas Persegi panjang: " + hasil);
+
+        // Manipulasi DOM
+
+
+        // function ubahHeader(){
+        //     let header = document.getElementById("header");
+        //     header.innerText = "Header Updated";
+        //     header.style.color = "lightblue"
+        // }
+
+          function tampilkanNama() {
+            let input = document.getElementById("inputNama").value;
+            document.getElementById("outputNama").innerText = input;
+        }
+
+    </script>
+ </body>
+ </html>
+
