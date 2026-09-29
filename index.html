@@ -1,68 +1,117 @@
-<!-- inline js -->
- <!DOCTYPE html>
- <html lang="en">
- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inline JS</title>
- </head>                        
- <body>
-    <!-- Elemen Input dan Button
-    <label for="inputNilai">Masukkan Nilai:</label>
-    <input type="number" id="inputNilai" placeholder="Contoh: 80">
-    <button onclick="cekKelulusan()">Cek Hasil</button> -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Praktikum jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+   <!-- Latihan Praktikum 2: Menggunakan $(document).ready() -->
+  <!-- <h1 id="pesan">Menunggu jQuery...</h1>
 
-    <h1 id="header">Header awal</h1>
-    <button onclick="ubahHeader()">Ubah Header</button>
+  <script>
+    $(document).ready(function() {
+      $('#pesan').text('Library jQuery berhasil dimuat dan siap digunakan!');
+    });
+  </script> -->
 
-    <input type="text" id="inputNama" placeholder="Ketik nama Anda..." onkeyup="tampilkanNama()">
-    <p>Halo, <span id="outputNama">...</span></p>
+  <!-- Latihan Praktikum 3: Manipulasi Berbagai Selector
+   <h2 class="judul">Judul Utama</h2>
+   <p id="paragraf1">Paragraf Pertama.</p>
+   <p class="teks">Paragraf Kedua.</p>
+   <button id="btnPilih">Sorot Elemen</button>
 
-    <!-- Kode JavaScript -->
-    <script>
-        // function cekKelulusan() {
-        //     // Membaca nilai dari input
-        //     let nilai = document.getElementById("inputNilai").value;
+   <script>
+   $('#btnPilih').click(function() {
+      $('.judul').css('color', 'blue');
+      $('#paragraf1').css('font-weight', 'bold');
+      $('.teks').css('background-color', 'yellow');
+   });
+   </script> -->
+   
+   <!-- Event Hover dan Keyup Real-time -->
+   <!-- <div id="kotak" style="width:150px; height:150px; background-color:lightblue; text-align:center; line-height:150px; margin-bottom:10px;">
+      Arahkan Kursor
+   </div>
 
-        //     // Validasi jika input kosong
-        //     if (nilai === "") {
-        //     alert("Harap masukkan nilai terlebih dahulu!");
-        //     return;
-        //     }
+   <input type="text" id="inputPesan" placeholder="Ketik sesuatu...">
+   <p>Hasil: <span id="outputPesan">-</span></p>
 
-        //     // Mengubah nilai teks menjadi tipe angka
-        //     nilai = Number(nilai);
+   <script>
+   $(document).ready(function() {
+      // Event hover (mouseenter & mouseleave)
+      $('#kotak').hover(
+         function() { $(this).css('background-color', 'lightgreen').text('Kursor Masuk'); },
+         function() { $(this).css('background-color', 'lightblue').text('Arahkan Kursor'); }
+      );
 
-        //     // Mengecek kondisi kelulusan dan menampilkan alert
-        //     if (nilai >= 75) {
-        //     alert("Status: LULUS (Nilai Anda: " + nilai + ")");
-        //     } else {
-        //     alert("Status: TIDAK LULUS (Nilai Anda: " + nilai + ")");
-        //     }
-        // }
+      // Event keyup pada input
+      $('#inputPesan').keyup(function() {
+         let isi = $(this).val();
+         $('#outputPesan').text(isi);
+      });
+   });
+   </script>
+</body>
+</html> -->
 
-        // function luas(panjang, lebar){
-        //     return panjang * lebar;
-        // }
+<!-- Latihan Praktikum 5: Membuat Efek Toggle Fade dan Slide -->
+ <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-        // let hasil = luas(2, 6);
-        // console.log("Luas Persegi panjang: " + hasil);
+<button id="btnToggle">Toggle Fade</button>
+<button id="btnSlide">Toggle Slide</button>
 
-        // Manipulasi DOM
+<div id="boxEfek" style="width:200px; height:100px; background-color:#e74c3c; margin-top:10px; color:white; padding:10px;">
+  Kotak Animasi
+</div>
 
+<script>
+  $(document).ready(function() {
+    $('#btnToggle').click(function() {
+      $('#boxEfek').fadeToggle('slow');
+    });
 
-        // function ubahHeader(){
-        //     let header = document.getElementById("header");
-        //     header.innerText = "Header Updated";
-        //     header.style.color = "lightblue"
-        // }
+    $('#btnSlide').click(function() {
+      $('#boxEfek').slideToggle('fast');
+    });
+  });
+</script> -->
 
-          function tampilkanNama() {
-            let input = document.getElementById("inputNama").value;
-            document.getElementById("outputNama").innerText = input;
-        }
+<!-- Latihan Praktikum 6: Manipulasi Konten dan Penambahan Elemen Dinamis -->
+ <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-    </script>
- </body>
- </html>
+<ul id="daftarItem">
+  <li>Item 1</li>
+</ul>
+
+<button id="btnAdd">Tambah Item</button>
+
+<script>
+  $(document).ready(function() {
+    let count = 2;
+    $('#btnAdd').click(function() {
+      $('#daftarItem').append('<li>Item ' + count + '</li>');
+      count++;
+    });
+  });
+</script> -->
+
+<!-- 
+Latihan Praktikum 7: Mengambil Data JSON Asynchronous (API) -->
+<!-- <button id="btnLoad">Muat Data Pengguna</button>
+<div id="userData" style="margin-top:10px;"></div>
+
+<script>
+  $(document).ready(function() {
+    $('#btnLoad').click(function() {
+      // Mengambil data pengguna dummy dari API publik
+      $.get('https://jsonplaceholder.typicode.com/users/1', function(data) {
+        $('#userData').html(
+          '<p><strong>Nama:</strong> ' + data.name + '<br>' +
+          '<strong>Email:</strong> ' + data.email + '<br>' +
+          '<strong>Kota:</strong> ' + data.address.city + '</p>'
+        );
+      });
+    });
+  });
+</script> -->
 
