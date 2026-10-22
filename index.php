@@ -10,23 +10,34 @@ $modul =$_GET['modul'] ?? 'beranda';
 
 // 4. Daftar Modul yang diizinkan (Termasuk modul login dan logout)
 $allowedModules = [
-    'beranda', 
-    'profil', 
-    'mahasiswa', 
-    'mahasiswa_tambah', 
-    'mahasiswa_edit', 
-    'mahasiswa_hapus', 
+    'beranda',
+    'profil',
+    'mahasiswa',
+    'mahasiswa_tambah',
+    'mahasiswa_edit',
+    'mahasiswa_hapus',
     'kontak',
     'login',
-    'logout'
+    'logout',
+
+    // Modul Admin
+    'admin',
+    'admin_tambah',
+    'admin_edit',
+    'admin_hapus'
 ];
 
-// 5. Daftar modul khusus CRUD yang wajib dilindungi (Hanya bisa diakses jika sudah login)
 $protectedModules = [
-    'mahasiswa', 
-    'mahasiswa_tambah', 
-    'mahasiswa_edit', 
-    'mahasiswa_hapus'
+    'mahasiswa',
+    'mahasiswa_tambah',
+    'mahasiswa_edit',
+    'mahasiswa_hapus',
+
+    // Semua modul Admin wajib login
+    'admin',
+    'admin_tambah',
+    'admin_edit',
+    'admin_hapus'
 ];
 
 if (in_array($modul, $protectedModules) && !isset($_SESSION['login_status'])) {

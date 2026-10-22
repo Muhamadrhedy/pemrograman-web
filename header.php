@@ -31,16 +31,30 @@
     <?php endif; ?>
   </header>
 
-  <nav>
+
+<nav>
     <a href="index.php?modul=beranda">Beranda</a>
     <a href="index.php?modul=profil">Profil Kampus</a>
     <a href="index.php?modul=mahasiswa">Data Mahasiswa (CRUD)</a>
     <a href="index.php?modul=kontak">Kontak</a>
-    <?php if (isset($_SESSION['login_status'])): ?>
-      <a href="index.php?modul=logout" style="color: #e74c3c;" onclick="return confirm('Keluar dari sistem?');">Logout</a>
+
+    <?php if (
+        isset($_SESSION['login_status']) &&
+        $_SESSION['login_status'] === true
+    ): ?>
+        <a href="index.php?modul=admin">Admin</a>
+        <a href="index.php?modul=logout"
+           style="color:#e74c3c;"
+           onclick="return confirm('Keluar dari sistem?');">
+            Logout
+        </a>
     <?php else: ?>
-      <a href="index.php?modul=login" style="color: #f1c40f;">Login Admin</a>
+        <a href="index.php?modul=login"
+           style="color:#f1c40f;">
+            Login Admin
+        </a>
     <?php endif; ?>
-  </nav>
+</nav>
+
 
   <div class="container">
