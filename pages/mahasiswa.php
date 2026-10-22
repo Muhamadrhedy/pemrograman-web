@@ -5,7 +5,7 @@ $query = "SELECT
     m.*,
     p.nama_prodi
 FROM biodata_mhs AS m
-JOIN prodi AS p
+LEFT JOIN prodi AS p
     ON m.prodi_id = p.id;";
 $result = mysqli_query($conn,$query);
 
