@@ -7,6 +7,8 @@ require_once __DIR__ . '/../src/Mahasiswa.php';
 require_once __DIR__ . '/../src/PenilaianDasar.php';
 require_once __DIR__ . '/../src/PenilaianReguler.php';
 require_once __DIR__ . '/../src/PenilaianPraktikum.php';
+require_once __DIR__ . '/../src/Nilai.php';
+require_once __DIR__ . '/../src/LaporanNilai.php';
 $data = ['nim'=>'','nama'=>'','tugas'=>'','uts'=>'','uas'=>'','skema'=>'reguler'];
 $error = ''; $hasil = null;
 if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
@@ -14,7 +16,8 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
         foreach (array_keys($data) as $key) $data[$key] = teks($_POST, $key, $data[$key]);
         $m = Mahasiswa::dariArray($data);
         $strategi = $m->getSkema() === 'reguler' ? new PenilaianReguler() : new PenilaianPraktikum();
-        $hasil = ['nama'=>$m->getNama(), 'akhir'=>$strategi->hitung($m->getTugas(), $m->getUts(), $m->getUas())];
+        $laporan = new LaporanNilai($strategi);
+        $hasil = $laporan->buat($m);
     } catch (InvalidArgumentException $ex) {
         $error = $ex->getMessage();
     }
