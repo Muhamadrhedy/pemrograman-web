@@ -1,14 +1,11 @@
 <?php
 declare(strict_types=1);
 require_once __DIR__ . '/../helpers.php';
-require_once __DIR__ . '/../src/ValidasiNilai.php';
-require_once __DIR__ . '/../src/Penilaian.php';
-require_once __DIR__ . '/../src/Mahasiswa.php';
-require_once __DIR__ . '/../src/PenilaianDasar.php';
-require_once __DIR__ . '/../src/PenilaianReguler.php';
-require_once __DIR__ . '/../src/PenilaianPraktikum.php';
-require_once __DIR__ . '/../src/Nilai.php';
-require_once __DIR__ . '/../src/LaporanNilai.php';
+require_once __DIR__ . '/../autoload.php';
+use SiNilai\Mahasiswa;
+use SiNilai\PenilaianReguler;
+use SiNilai\PenilaianPraktikum;
+use SiNilai\LaporanNilai;
 $data = ['nim'=>'','nama'=>'','tugas'=>'','uts'=>'','uas'=>'','skema'=>'reguler'];
 $error = ''; $hasil = null;
 if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {

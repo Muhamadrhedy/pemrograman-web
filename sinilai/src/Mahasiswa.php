@@ -1,5 +1,7 @@
 <?php
 declare(strict_types=1);
+namespace SiNilai;
+use InvalidArgumentException;
 class Mahasiswa {
     use ValidasiNilai;
     private string $nim;

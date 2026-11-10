@@ -1,5 +1,7 @@
 <?php
 declare(strict_types=1);
+namespace SiNilai;
+use InvalidArgumentException;
 abstract class PenilaianDasar implements Penilaian {
     use ValidasiNilai;
     abstract protected function bobot(): array;

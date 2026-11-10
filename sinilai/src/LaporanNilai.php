@@ -1,5 +1,7 @@
 <?php
 declare(strict_types=1);
+namespace SiNilai;
+use InvalidArgumentException;
 final class LaporanNilai {
     private Penilaian $strategi;
     public function __construct(Penilaian $strategi) { $this->strategi = $strategi; }
@@ -10,4 +12,4 @@ final class LaporanNilai {
             'tugas'=>$m->getTugas(), 'uts'=>$m->getUts(), 'uas'=>$m->getUas(),
             'akhir'=>$akhir, 'grade'=>$grade, 'status'=>$akhir >= Nilai::BATAS_LULUS ? 'Lulus' : 'Tidak lulus'];
     }
-}
+}   

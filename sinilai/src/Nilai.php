@@ -1,5 +1,7 @@
 <?php
 declare(strict_types=1);
+namespace SiNilai;
+use InvalidArgumentException;
 final class Nilai {
     public const BATAS_LULUS = 60;
     public static function grade(float $nilai): string {
