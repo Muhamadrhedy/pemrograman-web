@@ -8,7 +8,10 @@
 <?php foreach (['tugas'=>'Tugas','uts'=>'UTS','uas'=>'UAS'] as $key=>$label): ?>
 <label for="<?= e($key) ?>"><?= e($label) ?></label><input class="field" id="<?= e($key) ?>" name="<?= e($key) ?>" type="number" min="0" max="100" step="0.01" required value="<?= e($data[$key]) ?>">
 <?php endforeach; ?>
-<!-- PILIHAN_SKEMA -->
+<label for="skema">Skema penilaian</label><select class="field" id="skema" name="skema">
+<?php foreach (['reguler'=>'Reguler (40/30/30)', 'praktikum'=>'Praktikum (60/20/20)'] as $key=>$label): ?>
+<option value="<?= e($key) ?>" <?= $data['skema'] === $key ? 'selected' : '' ?>><?= e($label) ?></option>
+<?php endforeach; ?></select>
 <p><button type="submit">Hitung Nilai</button></p></form>
 <?php if ($hasil !== null): ?>
 <section><h2>Hasil Perhitungan</h2><p><?= e($hasil['nama']) ?>: <?= number_format($hasil['akhir'], 2, ',', '.') ?></p>
