@@ -1,17 +1,12 @@
 <?php
 namespace App\Http\Controllers;
+use App\Models\Buku;
 
 class BukuController extends Controller
 {
     public function index()
     {
-        // Menyiapkan data tiruan (sebagai pengganti database untuk sementara)
-        $buku = [
-            ['kode' => 'BK001', 'judul' => 'Dasar PHP OOP', 'stok' => 3],
-            ['kode' => 'BK002', 'judul' => 'Pengantar MySQL', 'stok' => 2],
-        ];
-
-        // Mengirim data $buku ke file view 'buku.index'
+        $buku = Buku::orderBy('judul')->orderBy('id')->paginate(5);
         return view('buku.index', compact('buku'));
     }
 }
